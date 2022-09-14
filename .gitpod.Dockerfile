@@ -1,5 +1,2 @@
-FROM gitpod/workspace-full:latest
-
-RUN bash -c 'VERSION="14.8.0" && source $HOME/.nvm/nvm.sh && nvm install $VERSION && nvm use $VERSION && nvm alias default $VERSION'
-
-RUN echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
+FROM gitpod/workspace-full
+RUN sudo apt-get update && sudo apt-get install -y libgtk-3-0 libx11-xcb1 libnss3 libxss1 libasound2
