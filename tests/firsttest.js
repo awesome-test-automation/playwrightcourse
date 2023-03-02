@@ -1,13 +1,19 @@
 const {chromium} = require('@playwright/test');
- 
-(async () => {
+
+(async ()=> {
+    //Creating the browser instance
     const browser = await chromium.launch({
-        headless:false
+        headless: false
     });
 
-    const broserInstance = browser.newContext();
-    const page = await (await broserInstance).newPage();
+    //Browser Instance
+    const browserIstance = await browser.newContext();
+
+    //Page
+    const page = await browserIstance.newPage();
+
+    //Navigate Google
     await page.goto("https://google.com");
-    await browser.close();
+
 
 })();
