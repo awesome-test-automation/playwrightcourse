@@ -2,9 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
 
-  // Go to about:blank
-  await page.goto('about:blank');
-
   // Go to http://eaapp.somee.com/
   await page.goto('http://eaapp.somee.com/');
 
@@ -12,14 +9,8 @@ test('test', async ({ page }) => {
   await page.locator('text=Login').click();
   await expect(page).toHaveURL('http://eaapp.somee.com/Account/Login');
 
-  // Click input[name="UserName"]
-  await page.locator('input[name="UserName"]').click();
-
   // Fill input[name="UserName"]
   await page.locator('input[name="UserName"]').fill('admin');
-
-  // Press Tab
-  await page.locator('input[name="UserName"]').press('Tab');
 
   // Fill input[name="Password"]
   await page.locator('input[name="Password"]').fill('password');
@@ -32,13 +23,16 @@ test('test', async ({ page }) => {
   await page.locator('text=Employee List').click();
   await expect(page).toHaveURL('http://eaapp.somee.com/Employee');
 
-  // Click td:nth-child(6) >> nth=0
-  await page.locator('td:nth-child(6)').first().click();
-  await expect(page).toHaveURL('http://eaapp.somee.com/Employee/Delete/1');
+  // Click text=Edit >> nth=0
+  await page.locator('text=Edit').nth(3).click();
+  await expect(page).toHaveURL('http://eaapp.somee.com/Employee/Edit/4');
 
-  // Click text=Back to List
-  await page.locator('text=Back to List').click();
-  await expect(page).toHaveURL('http://eaapp.somee.com/Employee');
+  // Fill input[name="Salary"]
+  await page.locator('input[name="Salary"]').fill('18000');
+
+  // Click text=Save
+  await page.locator('text=Save').click();
+  await expect(page).toHaveURL('http://eaapp.somee.com/Employee/Index/1');
 
   // Click text=Log off
   await page.locator('text=Log off').click();

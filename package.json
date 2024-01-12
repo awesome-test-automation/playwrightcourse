@@ -4,18 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/awesome-test-automation/playwrightcourse.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/awesome-test-automation/playwrightcourse/issues"
-  },
-  "homepage": "https://github.com/awesome-test-automation/playwrightcourse#readme",
   "devDependencies": {
-    "@playwright/test": "^1.24.0"
+    "@playwright/test": "^1.22.2"
   }
 }

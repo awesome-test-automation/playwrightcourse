@@ -48,6 +48,8 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         headless: false,
+        video: 'on',
+        screenshot: 'only-on-failure',
         ...devices['Desktop Chrome'],
       },
     },
@@ -55,7 +57,8 @@ const config: PlaywrightTestConfig = {
     {
       name: 'firefox',
       use: {
-        headless: false,
+        video: 'on',
+        headless:false,
         ...devices['Desktop Firefox'],
       },
     },
@@ -68,12 +71,13 @@ const config: PlaywrightTestConfig = {
     },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: {
-    //     ...devices['Pixel 5'],
-    //   },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: {
+        headless: false,
+        ...devices['Pixel 5'],
+      },
+    },
     // {
     //   name: 'Mobile Safari',
     //   use: {
