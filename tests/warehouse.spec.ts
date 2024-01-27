@@ -16,15 +16,15 @@ test("Navigating to Launge of Warehouse website", async ({ page }) => {
 
     categoryRoot.hover();
     await expect.soft(categoryRoot).toBeVisible();
-    await page.locator('.mega-menu-root-list >> #category-homegarden').hover();
+    await page.locator('.mega-menu-wrapper >> #category-homegarden').hover();
 
-    await expect.soft(page.locator('.mega-menu-root-list >> #category-homegarden')).toHaveAttribute("data-targets", "#mega-menu-category-homegarden");
-    await expect.soft(page.locator('.mega-menu-root-list >> #category-homegarden')).toHaveId("category-homegarde");
+    await expect.soft(page.locator('.mega-menu-wrapper >> #category-homegarden')).toHaveAttribute("data-targets", "#mega-menu-category-homegarden");
+    await expect.soft(page.locator('.mega-menu-wrapper >> #category-homegarden')).toHaveId("category-homegarde");
 
     await page.locator('a[role="menuitem"]:has-text("Lounge")').click();
-    await expect(page.locator('.mega-menu-root-list >> #category-homegarden')).not.toBeVisible();
+    await expect(page.locator('.mega-menu-wrapper >> #category-homegarden')).not.toBeVisible();
 
-    await expect(page.locator('.mega-menu-root-list >> #category-homegarden')).toBeHidden();
+    await expect(page.locator('.mega-menu-wrapper >> #category-homegarden')).toBeHidden();
 
     await expect(await page.locator(".title")).toHaveText("Lounge");
 
@@ -40,15 +40,15 @@ test("Navigating to Launge of Warehouse website - 2", async ({ page }) => {
 
     categoryRoot.hover();
     await expect.soft(categoryRoot).toBeVisible();
-    await page.locator('.mega-menu-root-list >> #category-homegarden').hover();
+    await page.locator('.mega-menu-wrapper >> #category-homegarden').hover();
 
-    await expect.soft(page.locator('.mega-menu-root-list >> #category-homegarden')).toHaveAttribute("data-targets", "#mega-menu-category-homegarden");
-    await expect.soft(page.locator('.mega-menu-root-list >> #category-homegarden')).toHaveId("category-homegarde");
+    await expect.soft(page.locator('.mega-menu-wrapper >> #category-homegarden')).toHaveAttribute("data-targets", "#mega-menu-category-homegarden");
+    await expect.soft(page.locator('.mega-menu-wrapper >> #category-homegarden')).toHaveId("category-homegarde");
 
     await page.locator('a[role="menuitem"]:has-text("Lounge")').click();
-    await expect(page.locator('.mega-menu-root-list >> #category-homegarden')).not.toBeVisible();
+    await expect(page.locator('.mega-menu-wrapper >> #category-homegarden')).not.toBeVisible();
 
-    await expect(page.locator('.mega-menu-root-list >> #category-homegarden')).toBeHidden();
+    await expect(page.locator('.mega-menu-wrapper >> #category-homegarden')).toBeHidden();
 
     await expect(await page.locator(".title")).toHaveText("Lounge");
 

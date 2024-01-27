@@ -17,7 +17,7 @@ test.describe.parallel("Test Navigation of Warehouse website", async () => {
 
             var categoryRoot = await page.locator("data-test-id=category-root");
             categoryRoot.hover();
-            await page.locator('.mega-menu-root-list >> #category-homegarden').hover();
+            await page.locator('.mega-menu-wrapper >> #category-homegarden').hover();
         });
 
 
@@ -41,7 +41,7 @@ test.describe.parallel("Test Navigation of Warehouse website", async () => {
             var categoryRoot = await page.locator("data-test-id=category-root");
 
             categoryRoot.hover();
-            await page.locator('.mega-menu-root-list >> #category-autodiy').hover();
+            await page.locator('.mega-menu-wrapper >> #category-autodiy').hover();
         });
 
 

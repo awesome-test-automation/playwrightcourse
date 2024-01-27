@@ -26,7 +26,7 @@ import {chromium} from '@playwright/test';
 
     //hover
     await page.locator("data-test-id=category-root").hover();
-    await page.locator('.mega-menu-root-list >> #category-homegarden').hover();
+    await page.locator('.mega-menu-wrapper >> #category-homegarden').hover();
 
     await page.locator('a[role="menuitem"]:has-text("Lounge")').click();
 
